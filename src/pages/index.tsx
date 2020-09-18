@@ -32,19 +32,12 @@ const Home: React.FC = () => {
         abortEarly: false,
       });
 
-      const { name, email } = data;
+      const { email } = data;
 
-      const response = await axios.post('/api/subscribe', { email });
-
-      console.log({
-        response,
-        name,
-      });
+      await axios.post('/api/subscribe', { email });
     } catch (err) {
       if (err instanceof Yup.ValidationError) {
         const errors = getValidationErrors(err);
-
-        console.log(errors);
 
         formRef.current?.setErrors(errors);
       }
