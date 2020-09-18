@@ -19,4 +19,4 @@ You can start editing the page by modifying `pages/index.tsx`. The page auto-upd
 
 ## Production example
 
-You can see this project running in production environment at [AFMELO.COM](https://subscribe.afmelo.com)
+You can see this project running in production environment at [AFMELO.COM](https://sls-subscribe.afmelo.com)

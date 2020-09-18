@@ -8,11 +8,12 @@ import axios from 'axios';
 import { FaUser } from 'react-icons/fa';
 import { FiMail } from 'react-icons/fi';
 
+import getValidationErrors from '../utils/getValidationErrors';
+import Input from '../components/Input';
+
 import logo from '../assets/green_triangle.png';
 
 import { Container } from '../styles/pages/Home';
-import getValidationErrors from '../utils/getValidationErrors';
-import Input from '../components/Input';
 
 const Home: React.FC = () => {
   const formRef = useRef<FormHandles>(null);
@@ -35,6 +36,8 @@ const Home: React.FC = () => {
       const { email } = data;
 
       await axios.post('/api/subscribe', { email });
+
+      formRef.current.reset();
     } catch (err) {
       if (err instanceof Yup.ValidationError) {
         const errors = getValidationErrors(err);
