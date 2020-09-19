@@ -4,7 +4,13 @@ import styled from 'styled-components';
 export const Container = styled.div`
   width: 100vw;
   height: 100vh;
+  display: flex;
+  flex-direction: column;
+`;
 
+export const Content = styled.div`
+  width: 100%;
+  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -52,24 +58,31 @@ export const Container = styled.div`
       button {
         margin-top: 10px;
         padding: 15px;
-        border-radius: 5px;
+        border-radius: 10px;
         cursor: pointer;
         background: ${props => props.theme.colors.green.primary};
         color: ${props => props.theme.colors.text};
         border: none;
+        font-weight: bold;
+        font-size: 20px;
 
         &:hover {
+          transition: 0.5s;
+          opacity: 0.8;
+
           background: ${props => props.theme.colors.green.medium};
         }
       }
     }
 
     a {
-      margin: 10px auto 0 auto;
+      margin: 20px auto 0 auto;
       text-decoration: none;
       color: ${props => props.theme.colors.text};
+
       &:hover {
-        color: gray;
+        transition: 0.5s;
+        opacity: 0.8;
       }
     }
   }

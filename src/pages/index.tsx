@@ -13,11 +13,13 @@ import Input from '../components/Input';
 
 import logo from '../assets/green_triangle.png';
 
-import { Container } from '../styles/pages/Home';
+import { Container, Content } from '../styles/pages/Home';
+import Header from '../components/Header';
 
 const Home: React.FC = () => {
   const formRef = useRef<FormHandles>(null);
 
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const handleSubmit = useCallback(async (data: any) => {
     try {
       formRef.current?.setErrors({});
@@ -52,19 +54,22 @@ const Home: React.FC = () => {
       <Head>
         <title>NEXTJS PLAYGROUND</title>
       </Head>
+      <Header />
 
-      <section>
-        <div className="logo-banner">
-          <img src={logo} alt="logo" />
-          <h1>AFMELO</h1>
-        </div>
-        <Form ref={formRef} onSubmit={handleSubmit}>
-          <Input name="name" icon={FaUser} placeholder="Seu nome" />
-          <Input name="email" icon={FiMail} placeholder="Seu melhor e-mail" />
-          <button type="submit">Subscribe</button>
-        </Form>
-        <a href="/another">Go to another page</a>
-      </section>
+      <Content>
+        <section>
+          <div className="logo-banner">
+            <img src={logo} alt="logo" />
+            <h1>AFMELO</h1>
+          </div>
+          <Form ref={formRef} onSubmit={handleSubmit}>
+            <Input name="name" icon={FaUser} placeholder="Seu nome" />
+            <Input name="email" icon={FiMail} placeholder="Seu melhor e-mail" />
+            <button type="submit">Subscribe</button>
+          </Form>
+          <a href="/another">Go to another page</a>
+        </section>
+      </Content>
     </Container>
   );
 };
