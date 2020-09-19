@@ -66,9 +66,11 @@ export const Content = styled.div`
         font-weight: bold;
         font-size: 20px;
 
-        &:hover {
-          transition: 0.5s;
-          opacity: 0.8;
+        transition: opacity 0.2s;
+
+        &:hover,
+        &:focus {
+          opacity: 0.55;
 
           background: ${props => props.theme.colors.green.medium};
         }
@@ -80,9 +82,11 @@ export const Content = styled.div`
       text-decoration: none;
       color: ${props => props.theme.colors.text};
 
-      &:hover {
-        transition: 0.5s;
-        opacity: 0.8;
+      transition: opacity 0.2s;
+
+      &:hover,
+      &:focus {
+        opacity: 0.55;
       }
     }
   }

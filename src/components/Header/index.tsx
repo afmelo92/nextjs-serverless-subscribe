@@ -1,34 +1,24 @@
 import React from 'react';
-import Company from '../Content/Company';
-import Developers from '../Content/Developers';
-import Products from '../Content/Products';
+import logo from '../../assets/green_triangle.png';
 
-import DropdownOption from '../Dropdown/DropdownOption';
-import DropdownRoot from '../Dropdown/DropdownRoot';
-import { DropdownProvider } from '../Dropdown/Provider';
-
-import { Container, DropdownStyles } from './styles';
+import { Container, Navbar, NavLogo, NavItems } from './styles';
 
 const Header: React.FC = () => {
   return (
-    <DropdownProvider>
-      <DropdownStyles>
-        <Container>
-          <ul>
-            <li>
-              <DropdownOption name="Products" content={Products} />
-            </li>
-            <li>
-              <DropdownOption name="Developers" content={Developers} />
-            </li>
-            <li>
-              <DropdownOption name="Company" content={Company} />
-            </li>
-          </ul>
-        </Container>
-        <DropdownRoot />
-      </DropdownStyles>
-    </DropdownProvider>
+    <Container>
+      <Navbar>
+        <NavLogo>
+          <img src={logo} alt="logo" />
+          <h1>AFMELO</h1>
+        </NavLogo>
+        <NavItems>
+          <a href="/">Products</a>
+          <a href="/">Developers</a>
+          <a href="/">Company</a>
+          <a href="/">Contact</a>
+        </NavItems>
+      </Navbar>
+    </Container>
   );
 };
 

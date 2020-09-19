@@ -2,37 +2,11 @@
 import styled from 'styled-components';
 
 export const Container = styled.nav`
-  background: linear-gradient(150deg, #00cc00 15%, #006b00);
-
-  > ul {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    padding: 0 21px;
-  }
+  background: linear-gradient(360deg, #29292e 90%, #121214);
+  height: 100px;
+  display: flex;
 `;
 
-export const DropdownStyles = styled.div`
-  .dropdown-option {
-    padding: 20px 25px;
-    outline: 0;
-    font-size: 18px;
-    color: ${props => props.theme.colors.text};
-    border: 0;
-    background: transparent;
-    transition: opacity 0.2s;
-
-    &:hover,
-    &:focus {
-      opacity: 0.55;
-    }
-  }
-`;
-/**
- *
- *
- *
 export const Navbar = styled.div`
   display: flex;
   width: 100%;
@@ -63,20 +37,28 @@ export const NavLogo = styled.div`
 export const NavItems = styled.div`
   display: flex;
   margin-right: 90px;
+  height: 100%;
+  align-items: center;
 
   a {
-    font-weight: bold;
+    height: 100%;
+
     font-size: 18px;
-    color: ${props => props.theme.colors.text};
+    font-weight: bold;
+    color: ${props => props.theme.colors.green.primary};
     cursor: pointer;
     text-decoration: none;
     margin: 0 20px 0 20px;
+    padding: 30px;
 
-    &:hover {
-      transition: 0.5s;
-      opacity: 0.8;
+    transition: opacity 0.2s;
+
+    &:hover,
+    &:focus {
+      opacity: 0.55;
+      background: ${props => props.theme.colors.green.primary};
+      color: ${props => props.theme.colors.text};
+      border-bottom: 5px solid #fff;
     }
   }
 `;
-
- */
