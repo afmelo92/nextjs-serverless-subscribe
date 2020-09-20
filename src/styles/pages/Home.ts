@@ -17,7 +17,7 @@ export const Content = styled.div`
   flex-direction: column;
 
   section {
-    background: ${props => props.theme.colors.gray.dark};
+    background: ${props => props.theme.color.background};
     border-radius: 10px;
     display: flex;
     flex-direction: column;
@@ -42,7 +42,7 @@ export const Content = styled.div`
       h1 {
         margin: 0 auto 0 -32px;
         font-size: 40px;
-        color: ${props => props.theme.colors.text};
+        color: ${props => props.theme.color.text};
       }
     }
 
@@ -60,8 +60,8 @@ export const Content = styled.div`
         padding: 15px;
         border-radius: 10px;
         cursor: pointer;
-        background: ${props => props.theme.colors.green.primary};
-        color: ${props => props.theme.colors.text};
+        background: ${props => props.theme.color.primary};
+        color: ${props => props.theme.color.text};
         border: none;
         font-weight: bold;
         font-size: 20px;
@@ -72,7 +72,7 @@ export const Content = styled.div`
         &:focus {
           opacity: 0.55;
 
-          background: ${props => props.theme.colors.green.medium};
+          background: ${props => props.theme.color.primary};
         }
       }
     }
@@ -80,7 +80,7 @@ export const Content = styled.div`
     a {
       margin: 20px auto 0 auto;
       text-decoration: none;
-      color: ${props => props.theme.colors.text};
+      color: ${props => props.theme.color.text};
 
       transition: opacity 0.2s;
 

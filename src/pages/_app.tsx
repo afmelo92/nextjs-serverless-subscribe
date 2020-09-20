@@ -1,13 +1,23 @@
-import React from 'react';
+import React, { useCallback, useState } from 'react';
 import { AppProps } from 'next/app';
 
 import { ThemeProvider } from 'styled-components';
 import GlobalStyle from '../styles/global';
-import theme from '../styles/theme';
+import light from '../styles/themes/light';
+import dark from '../styles/themes/dark';
+import Header from '../components/Header';
 
 const MyApp: React.FC<AppProps> = ({ Component, pageProps }) => {
+  const [theme, setTheme] = useState(light);
+
+  const toggleTheme = useCallback(() => {
+    setTheme(theme.title === 'light' ? dark : light);
+    console.log(theme);
+  }, []);
+
   return (
     <ThemeProvider theme={theme}>
+      <Header toggleTheme={toggleTheme} />
       <Component {...pageProps} />
       <GlobalStyle />
     </ThemeProvider>

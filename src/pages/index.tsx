@@ -14,7 +14,6 @@ import Input from '../components/Input';
 import logo from '../assets/green_triangle.png';
 
 import { Container, Content } from '../styles/pages/Home';
-import Header from '../components/Header';
 
 const Home: React.FC = () => {
   const formRef = useRef<FormHandles>(null);
@@ -54,8 +53,6 @@ const Home: React.FC = () => {
       <Head>
         <title>NEXTJS PLAYGROUND</title>
       </Head>
-      <Header />
-
       <Content>
         <section>
           <div className="logo-banner">
@@ -67,7 +64,7 @@ const Home: React.FC = () => {
             <Input name="email" icon={FiMail} placeholder="Seu melhor e-mail" />
             <button type="submit">Subscribe</button>
           </Form>
-          <a href="/another">Go to another page</a>
+          <a href="/products">Go to another page</a>
         </section>
       </Content>
     </Container>

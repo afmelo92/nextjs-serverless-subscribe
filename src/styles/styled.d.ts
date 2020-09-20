@@ -1,10 +1,16 @@
 /* eslint-disable @typescript-eslint/no-empty-interface */
 import 'styled-components';
 
-import theme from './theme';
-
-export type Theme = typeof theme;
-
 declare module 'styled-components' {
-  export interface DefaultTheme extends Theme {}
+  export interface DefaultTheme {
+    title: string;
+
+    color: {
+      primary: string;
+      secondary: string;
+
+      background: string;
+      text: string;
+    };
+  }
 }

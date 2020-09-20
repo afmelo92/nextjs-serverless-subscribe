@@ -30,7 +30,7 @@ export const NavLogo = styled.div`
   h1 {
     margin: 0 auto 0 -22px;
     font-size: 30px;
-    color: ${props => props.theme.colors.text};
+    color: ${props => props.theme.color.text};
   }
 `;
 
@@ -45,7 +45,7 @@ export const NavItems = styled.div`
 
     font-size: 18px;
     font-weight: bold;
-    color: ${props => props.theme.colors.green.primary};
+    color: ${props => props.theme.color.primary};
     cursor: pointer;
     text-decoration: none;
     margin: 0 20px 0 20px;
@@ -56,8 +56,8 @@ export const NavItems = styled.div`
     &:hover,
     &:focus {
       opacity: 0.55;
-      background: ${props => props.theme.colors.green.primary};
-      color: ${props => props.theme.colors.text};
+      background: ${props => props.theme.color.primary};
+      color: ${props => props.theme.color.text};
       border-bottom: 5px solid #fff;
     }
   }
