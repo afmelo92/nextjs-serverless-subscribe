@@ -9,4 +9,9 @@ export const Container = styled.div`
   align-items: center;
   background: #00cc00;
   color: #fff;
+
+  a {
+    margin-top: 50px;
+    text-decoration: none;
+  }
 `;

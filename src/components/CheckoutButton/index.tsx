@@ -2,6 +2,7 @@ import React from 'react';
 import { loadStripe } from '@stripe/stripe-js';
 
 import stripeConfig from '../../config/stripe';
+import { StripeButton } from './styles';
 
 const stripePromise = loadStripe(stripeConfig.publicKey);
 
@@ -34,9 +35,9 @@ const CheckoutButton: React.FC<Props> = ({ priceId, itemName }) => {
     // using `error.message`.
   }
   return (
-    <button type="button" role="link" onClick={handleClick}>
+    <StripeButton type="button" role="link" onClick={handleClick}>
       Comprar
-    </button>
+    </StripeButton>
   );
 };
 
