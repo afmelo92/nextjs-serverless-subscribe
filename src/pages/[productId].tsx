@@ -1,6 +1,7 @@
 import { GetStaticPaths, GetStaticProps } from 'next';
 import React from 'react';
 import Stripe from 'stripe';
+import CheckoutButton from '../components/CheckoutButton';
 
 import stripeConfig from '../config/stripe';
 import { Container } from '../styles/pages/Product';
@@ -9,6 +10,7 @@ import formatPrice from '../utils/formatPrice';
 interface Props {
   product: Stripe.Product;
   price: number;
+  priceId: string;
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
@@ -41,17 +43,17 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   const prices = await stripe.prices.list();
 
   const productPrice = prices.data.filter(item => item.product === productId);
-  console.log(productPrice);
 
   return {
     props: {
       product,
       price: productPrice[0].unit_amount,
+      priceId: productPrice[0].id,
     },
   };
 };
 
-const Product: React.FC<Props> = ({ product, price }) => {
+const Product: React.FC<Props> = ({ product, price, priceId }) => {
   const formattedPrice = formatPrice(price / 100);
 
   return (
@@ -61,6 +63,7 @@ const Product: React.FC<Props> = ({ product, price }) => {
         {product.images && <img src={product.images[0]} alt={product.name} />}
         <h1>{formattedPrice}</h1>
         <h3>{product.description}</h3>
+        <CheckoutButton itemName={product.name} priceId={priceId} />
       </div>
     </Container>
   );

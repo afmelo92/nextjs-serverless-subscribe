@@ -19,7 +19,7 @@ const Header: React.FC<HeaderProps> = ({ toggleTheme }) => {
           <h1>AFMELO</h1>
         </NavLogo>
         <NavItems>
-          <a href="/">Products</a>
+          <a href="/products">Products</a>
           <a href="/">Developers</a>
           <a href="/">Company</a>
           <a href="/">Contact</a>
